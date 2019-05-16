@@ -3,14 +3,9 @@ public class Yatzy
 
     protected int[] dices;
 
-    public Yatzy(int d1, int d2, int d3, int d4, int _5)
+    public Yatzy(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        dices = new int[5];
-        dices[0] = d1;
-        dices[1] = d2;
-        dices[2] = d3;
-        dices[3] = d4;
-        dices[4] = _5;
+        dices = new int[] {dice1, dice2, dice3, dice4, dice5};
     }
 
     public int fours()
