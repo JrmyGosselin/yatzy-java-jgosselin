@@ -31,13 +31,10 @@ public class Yatzy
 
     public static int yatzy(int... dices)
     {
-        int[] counts = getValueOccurrences(dices);
-        for(int i = 0; i != 6; i++)
+        int sum = getSumOfAllTuples(dices, 5, 1);
+        if(sum != 0)
         {
-            if(counts[i] == 5)
-            {
-                return 50;
-            }
+            return 50;
         }
         return 0;
     }
@@ -118,11 +115,11 @@ public class Yatzy
             }
         }
 
-
         if (pairValue != 0 && tripleValue != 0)
+        {
             return pairValue * 2 + tripleValue * 3;
-        else
-            return 0;
+        }
+        return 0;
     }
 
     private static int getSumOfAllDicesWithValues(int[] dices, int... values)
