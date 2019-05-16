@@ -29,14 +29,21 @@ public class Yatzy
         return getSumOfAllDicesWithValues(dices,1,2,3,4,5,6);
     }
 
-    public static int yatzy(int... dice)
+    public static int yatzy(int... dices)
     {
         int[] counts = new int[6];
-        for (int die : dice)
-            counts[die-1]++;
-        for (int i = 0; i != 6; i++)
-            if (counts[i] == 5)
+        for (int dice : dices)
+        {
+            counts[dice-1]++;
+        }
+
+        for(int i = 0; i != 6; i++)
+        {
+            if(counts[i] == 5)
+            {
                 return 50;
+            }
+        }
         return 0;
     }
 
