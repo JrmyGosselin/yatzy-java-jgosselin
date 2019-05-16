@@ -63,51 +63,25 @@ public class Yatzy
     public static int score_pair(int d1, int d2, int d3, int d4, int d5)
     {
         int[] dices = new int[] {d1, d2, d3, d4, d5};
-        int[] counts = getValueOccurrences(dices);
-
-        for (int i = 0; i < 6; i++)
-            if (counts[5-i] >= 2)
-                return (6-i)*2;
-        return 0;
+        return getSumOfAllTuples(dices,2, 1);
     }
 
     public static int two_pair(int d1, int d2, int d3, int d4, int d5)
     {
         int[] dices = new int[] {d1, d2, d3, d4, d5};
-        int[] counts = getValueOccurrences(dices);
-
-        int n = 0;
-        int score = 0;
-        for (int i = 0; i < 6; i += 1)
-            if (counts[6-i-1] >= 2) {
-                n++;
-                score += (6-i);
-            }
-        if (n == 2)
-            return score * 2;
-        else
-            return 0;
+        return getSumOfAllTuples(dices,2, 2);
     }
 
     public static int four_of_a_kind(int d1, int d2, int d3, int d4, int d5)
     {
         int[] dices = new int[] {d1, d2, d3, d4, d5};
-        int[] counts = getValueOccurrences(dices);
-        for (int i = 0; i < 6; i++)
-            if (counts[i] >= 4)
-                return (i+1) * 4;
-        return 0;
+        return getSumOfAllTuples(dices,4, 1);
     }
 
     public static int three_of_a_kind(int d1, int d2, int d3, int d4, int d5)
     {
         int[] dices = new int[] {d1, d2, d3, d4, d5};
-        int[] counts = getValueOccurrences(dices);
-
-        for (int i = 0; i < 6; i++)
-            if (counts[i] >= 3)
-                return (i+1) * 3;
-        return 0;
+        return getSumOfAllTuples(dices,3, 1);
     }
 
     public static int smallStraight(int d1, int d2, int d3, int d4, int d5)
@@ -172,7 +146,8 @@ public class Yatzy
         int sum = 0;
         for (int i = 0; i < dices.length; i++)
         {
-            for(int value : values) {
+            for(int value : values)
+            {
                 if (dices[i] == value)
                 {
                     sum += value;
@@ -190,5 +165,33 @@ public class Yatzy
             counts[dice-1]++;
         }
         return counts;
+    }
+
+    private static int getSumOfAllTuples(int[] dices, int tupleSize, int expectedTupleCount)
+    {
+        int sum = 0;
+        int tuplesCounted = 0;
+        int[] counts = getValueOccurrences(dices);
+
+        // we do a backward loop to catch the highest values first
+        // we must do this because when looking for one pair, we must return the highest if there are two
+        for(int i = counts.length -1 ; i>=0; i--)
+        {
+            if(counts[i] >= tupleSize)
+            {
+                int diceValue = i+1;
+                if(tuplesCounted < expectedTupleCount)
+                {
+                    sum += diceValue * tupleSize;
+                    tuplesCounted++;
+                }
+            }
+        }
+
+        if(tuplesCounted == expectedTupleCount)
+        {
+            return sum;
+        }
+        return 0;
     }
 }
