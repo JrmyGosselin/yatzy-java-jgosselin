@@ -49,38 +49,20 @@ public class Yatzy
 
     public static int ones(int d1, int d2, int d3, int d4, int d5)
     {
-        int sum = 0;
-        if (d1 == 1) sum++;
-        if (d2 == 1) sum++;
-        if (d3 == 1) sum++;
-        if (d4 == 1) sum++;
-        if (d5 == 1)
-            sum++;
-
-        return sum;
+        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        return getSumOfAllDicesWithValues(dices,1);
     }
 
     public static int twos(int d1, int d2, int d3, int d4, int d5)
     {
-        int sum = 0;
-        if (d1 == 2) sum += 2;
-        if (d2 == 2) sum += 2;
-        if (d3 == 2) sum += 2;
-        if (d4 == 2) sum += 2;
-        if (d5 == 2) sum += 2;
-        return sum;
+        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        return getSumOfAllDicesWithValues(dices,2);
     }
 
     public static int threes(int d1, int d2, int d3, int d4, int d5)
     {
-        int s;
-        s = 0;
-        if (d1 == 3) s += 3;
-        if (d2 == 3) s += 3;
-        if (d3 == 3) s += 3;
-        if (d4 == 3) s += 3;
-        if (d5 == 3) s += 3;
-        return s;
+        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        return getSumOfAllDicesWithValues(dices,3);
     }
 
     public static int score_pair(int d1, int d2, int d3, int d4, int d5)
