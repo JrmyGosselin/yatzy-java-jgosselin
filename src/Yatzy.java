@@ -10,41 +10,23 @@ public class Yatzy
 
     public int fours()
     {
-        return getSumOfAllDicesWithValue(4);
+        return getSumOfAllDicesWithValues(dices,4);
     }
 
     public int fives()
     {
-        return getSumOfAllDicesWithValue(5);
+        return getSumOfAllDicesWithValues(dices,5);
     }
 
     public int sixes()
     {
-        return getSumOfAllDicesWithValue(6);
-    }
-
-    private int getSumOfAllDicesWithValue(int value)
-    {
-        int sum = 0;
-        for (int i = 0; i < dices.length; i++)
-        {
-            if (dices[i] == value)
-            {
-                sum += value;
-            }
-        }
-        return sum;
+        return getSumOfAllDicesWithValues(dices,6);
     }
 
     public static int chance(int d1, int d2, int d3, int d4, int d5)
     {
-        int total = 0;
-        total += d1;
-        total += d2;
-        total += d3;
-        total += d4;
-        total += d5;
-        return total;
+        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        return getSumOfAllDicesWithValues(dices,1,2,3,4,5,6);
     }
 
     public static int yatzy(int... dice)
@@ -231,5 +213,20 @@ public class Yatzy
             return _2_at * 2 + _3_at * 3;
         else
             return 0;
+    }
+
+    private static int getSumOfAllDicesWithValues(int[] dices, int... values)
+    {
+        int sum = 0;
+        for (int i = 0; i < dices.length; i++)
+        {
+            for(int value : values) {
+                if (dices[i] == value)
+                {
+                    sum += value;
+                }
+            }
+        }
+        return sum;
     }
 }
