@@ -22,7 +22,8 @@ public class Yatzy {
         return 0;
     }
 
-    public static int ones(int d1, int d2, int d3, int d4, int d5) {
+    public static int ones(int d1, int d2, int d3, int d4, int d5)
+    {
         int sum = 0;
         if (d1 == 1) sum++;
         if (d2 == 1) sum++;
@@ -34,7 +35,8 @@ public class Yatzy {
         return sum;
     }
 
-    public static int twos(int d1, int d2, int d3, int d4, int d5) {
+    public static int twos(int d1, int d2, int d3, int d4, int d5)
+    {
         int sum = 0;
         if (d1 == 2) sum += 2;
         if (d2 == 2) sum += 2;
@@ -44,7 +46,8 @@ public class Yatzy {
         return sum;
     }
 
-    public static int threes(int d1, int d2, int d3, int d4, int d5) {
+    public static int threes(int d1, int d2, int d3, int d4, int d5)
+    {
         int s;
         s = 0;
         if (d1 == 3) s += 3;
