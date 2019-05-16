@@ -103,27 +103,23 @@ public class Yatzy
         int[] dices = new int[] {d1, d2, d3, d4, d5};
         int[] counts = getValueOccurrences(dices);
 
-        boolean pairFound = false;
         int pairValue = 0;
-        boolean tripleFound = false;
         int tripleValue = 0;
 
         for (int i = 0; i < counts.length; i ++)
         {
             if (counts[i] == 2)
             {
-                pairFound = true;
                 pairValue = i + 1;
             }
             if (counts[i] == 3)
             {
-                tripleFound = true;
                 tripleValue = i+1;
             }
         }
 
 
-        if (pairFound && tripleFound)
+        if (pairValue != 0 && tripleValue != 0)
             return pairValue * 2 + tripleValue * 3;
         else
             return 0;
@@ -155,7 +151,7 @@ public class Yatzy
         return counts;
     }
 
-    private static int getSumOfAllTuples(int[] dices, int tupleSize, int expectedTupleCount)
+    private static int getSumOfAllTuples(int[] dices, int expectedTupleSize, int expectedTupleCount)
     {
         int sum = 0;
         int tuplesCounted = 0;
@@ -165,12 +161,12 @@ public class Yatzy
         // we must do this because when looking for one pair, we must return the highest if there are two
         for(int i = counts.length -1 ; i>=0; i--)
         {
-            if(counts[i] >= tupleSize)
+            if(counts[i] >= expectedTupleSize)
             {
                 int diceValue = i+1;
                 if(tuplesCounted < expectedTupleCount)
                 {
-                    sum += diceValue * tupleSize;
+                    sum += diceValue * expectedTupleSize;
                     tuplesCounted++;
                 }
             }
