@@ -31,6 +31,7 @@ public class YatzyTest
     @Test
     public void twosScoresTwoForEachTwo()
     {
+        assertEquals(0, Yatzy.twos(1,1,3,6,5));
         assertEquals(4, Yatzy.twos(1,2,3,2,6));
         assertEquals(10, Yatzy.twos(2,2,2,2,2));
     }
