@@ -1,4 +1,5 @@
-public class Yatzy {
+public class Yatzy
+{
 
     protected int[] dice;
     public Yatzy(int d1, int d2, int d3, int d4, int _5)

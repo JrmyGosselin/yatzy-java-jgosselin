@@ -1,7 +1,8 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class YatzyTest {
+public class YatzyTest
+{
 
     @Test
     public void chance_scores_sum_of_all_dice()
