@@ -12,7 +12,8 @@ public class YatzyTest {
         assertEquals(16, Yatzy.chance(3,3,4,5,1));
     }
 
-    @Test public void yatzy_scores_50()
+    @Test
+    public void yatzy_scores_50()
     {
         int expected = 50;
         int actual = Yatzy.yatzy(4,4,4,4,4);
@@ -21,7 +22,8 @@ public class YatzyTest {
         assertEquals(0, Yatzy.yatzy(6,6,6,6,3));
     }
 
-    @Test public void test_1s()
+    @Test
+    public void test_1s()
     {
         assertTrue(Yatzy.ones(1,2,3,4,5) == 1);
         assertEquals(2, Yatzy.ones(1,2,1,4,5));
