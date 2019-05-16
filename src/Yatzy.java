@@ -85,14 +85,22 @@ public class Yatzy
     {
         int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         int smallStraightSum = 15;
-        return getSumOfAllTuples(dices,1,5) == smallStraightSum ? smallStraightSum : 0;
+        if(getSumOfAllTuples(dices,1,5) == smallStraightSum)
+        {
+            return smallStraightSum;
+        }
+        return 0;
     }
 
     public static int largeStraight(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
         int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         int largeStraightSum = 20;
-        return getSumOfAllTuples(dices,1,5) == largeStraightSum ? largeStraightSum : 0;
+        if(getSumOfAllTuples(dices,1,5) == largeStraightSum)
+        {
+            return largeStraightSum;
+        }
+        return 0;
     }
 
     public static int fullHouse(int dice1, int dice2, int dice3, int dice4, int dice5)
