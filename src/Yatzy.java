@@ -32,7 +32,6 @@ public class Yatzy
     public static int yatzy(int... dices)
     {
         int[] counts = getValueOccurrences(dices);
-
         for(int i = 0; i != 6; i++)
         {
             if(counts[i] == 5)
@@ -183,7 +182,8 @@ public class Yatzy
         return sum;
     }
 
-    private static int[] getValueOccurrences(int[] dices) {
+    private static int[] getValueOccurrences(int[] dices)
+    {
         int[] counts = new int[6];
         for (int dice : dices)
         {
