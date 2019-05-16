@@ -5,14 +5,14 @@ public class YatzyTest
 {
 
     @Test
-    public void chance_scores_sum_of_all_dice()
+    public void chanceScoresSumOfAllDices()
     {
         assertEquals(15, Yatzy.chance(2,3,4,5,1));
         assertEquals(16, Yatzy.chance(3,3,4,5,1));
     }
 
     @Test
-    public void yatzy_scores_50()
+    public void yatzyScoresFifty()
     {
         assertEquals(50, Yatzy.yatzy(4,4,4,4,4));
         assertEquals(50, Yatzy.yatzy(6,6,6,6,6));
@@ -20,7 +20,7 @@ public class YatzyTest
     }
 
     @Test
-    public void test_1s()
+    public void onesScoresOneForEachOne()
     {
         assertEquals(1, Yatzy.ones(1,2,3,4,5));
         assertEquals(2, Yatzy.ones(1,2,1,4,5));
@@ -29,21 +29,21 @@ public class YatzyTest
     }
 
     @Test
-    public void test_2s()
+    public void twosScoresTwoForEachTwo()
     {
         assertEquals(4, Yatzy.twos(1,2,3,2,6));
         assertEquals(10, Yatzy.twos(2,2,2,2,2));
     }
 
     @Test
-    public void test_threes()
+    public void threesScoresThreeForEachThree()
     {
         assertEquals(6, Yatzy.threes(1,2,3,2,3));
         assertEquals(12, Yatzy.threes(2,3,3,3,3));
     }
 
     @Test
-    public void fours_test()
+    public void foursScoresFourForEachFour()
     {
         assertEquals(12, new Yatzy(4,4,4,5,5).fours());
         assertEquals(8, new Yatzy(4,4,5,5,5).fours());
@@ -51,7 +51,7 @@ public class YatzyTest
     }
 
     @Test
-    public void fives()
+    public void fivesScoresFiveForEachFive()
     {
         assertEquals(10, new Yatzy(4,4,4,5,5).fives());
         assertEquals(15, new Yatzy(4,4,5,5,5).fives());
@@ -59,7 +59,7 @@ public class YatzyTest
     }
 
     @Test
-    public void sixes_test()
+    public void sixesScoresSixForEachSix()
     {
         assertEquals(0, new Yatzy(4,4,4,5,5).sixes());
         assertEquals(6, new Yatzy(4,4,6,5,5).sixes());
@@ -67,7 +67,7 @@ public class YatzyTest
     }
 
     @Test
-    public void one_pair()
+    public void onePairScoresSumOfTwoHighestMatchingDices()
     {
         assertEquals(6, Yatzy.score_pair(3,4,3,5,6));
         assertEquals(10, Yatzy.score_pair(5,3,3,3,5));
@@ -75,14 +75,14 @@ public class YatzyTest
     }
 
     @Test
-    public void two_Pair()
+    public void twoPairScoresSumOfTwoPairs()
     {
         assertEquals(16, Yatzy.two_pair(3,3,5,4,5));
         assertEquals(16, Yatzy.two_pair(3,3,5,5,5));
     }
 
     @Test
-    public void three_of_a_kind()
+    public void threeOfAKindScoresSumOfTriple()
     {
         assertEquals(9, Yatzy.three_of_a_kind(3,3,3,4,5));
         assertEquals(15, Yatzy.three_of_a_kind(5,3,5,4,5));
@@ -90,7 +90,7 @@ public class YatzyTest
     }
 
     @Test
-    public void four_of_a_knd()
+    public void fourOfAKindScoresSumOfQuadruple()
     {
         assertEquals(12, Yatzy.four_of_a_kind(3,3,3,3,5));
         assertEquals(20, Yatzy.four_of_a_kind(5,5,5,4,5));
@@ -98,7 +98,7 @@ public class YatzyTest
     }
 
     @Test
-    public void smallStraight()
+    public void smallStraightScoresFifteen()
     {
         assertEquals(15, Yatzy.smallStraight(1,2,3,4,5));
         assertEquals(15, Yatzy.smallStraight(2,3,4,5,1));
@@ -106,15 +106,16 @@ public class YatzyTest
     }
 
     @Test
-    public void largeStraight()
+    public void largeStraightScoresTwenty()
     {
         assertEquals(20, Yatzy.largeStraight(6,2,3,4,5));
         assertEquals(20, Yatzy.largeStraight(2,3,4,5,6));
         assertEquals(0, Yatzy.largeStraight(1,2,2,4,5));
     }
 
+    // A full house scores sum of all dices when there's a three of a kind AND a two of a kind in the dices
     @Test
-    public void fullHouse()
+    public void fullHouseScoresSumOfAllDices()
     {
         assertEquals(18, Yatzy.fullHouse(6,2,2,2,6));
         assertEquals(0, Yatzy.fullHouse(2,3,4,5,6));
