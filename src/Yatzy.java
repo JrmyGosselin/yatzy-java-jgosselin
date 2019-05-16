@@ -23,9 +23,9 @@ public class Yatzy
         return getSumOfAllDicesWithValues(dices,6);
     }
 
-    public static int chance(int d1, int d2, int d3, int d4, int d5)
+    public static int chance(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         return getSumOfAllDicesWithValues(dices,1,2,3,4,5,6);
     }
 
@@ -39,65 +39,65 @@ public class Yatzy
         return 0;
     }
 
-    public static int ones(int d1, int d2, int d3, int d4, int d5)
+    public static int ones(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         return getSumOfAllDicesWithValues(dices,1);
     }
 
-    public static int twos(int d1, int d2, int d3, int d4, int d5)
+    public static int twos(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         return getSumOfAllDicesWithValues(dices,2);
     }
 
-    public static int threes(int d1, int d2, int d3, int d4, int d5)
+    public static int threes(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         return getSumOfAllDicesWithValues(dices,3);
     }
 
-    public static int score_pair(int d1, int d2, int d3, int d4, int d5)
+    public static int score_pair(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         return getSumOfAllTuples(dices,2, 1);
     }
 
-    public static int two_pair(int d1, int d2, int d3, int d4, int d5)
+    public static int two_pair(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         return getSumOfAllTuples(dices,2, 2);
     }
 
-    public static int four_of_a_kind(int d1, int d2, int d3, int d4, int d5)
+    public static int four_of_a_kind(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         return getSumOfAllTuples(dices,4, 1);
     }
 
-    public static int three_of_a_kind(int d1, int d2, int d3, int d4, int d5)
+    public static int three_of_a_kind(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         return getSumOfAllTuples(dices,3, 1);
     }
 
-    public static int smallStraight(int d1, int d2, int d3, int d4, int d5)
+    public static int smallStraight(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         int smallStraightSum = 15;
         return getSumOfAllTuples(dices,1,5) == smallStraightSum ? smallStraightSum : 0;
     }
 
-    public static int largeStraight(int d1, int d2, int d3, int d4, int d5)
+    public static int largeStraight(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         int largeStraightSum = 20;
         return getSumOfAllTuples(dices,1,5) == largeStraightSum ? largeStraightSum : 0;
     }
 
-    public static int fullHouse(int d1, int d2, int d3, int d4, int d5)
+    public static int fullHouse(int dice1, int dice2, int dice3, int dice4, int dice5)
     {
-        int[] dices = new int[] {d1, d2, d3, d4, d5};
+        int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         int[] counts = getValueOccurrences(dices);
 
         int pairValue = 0;
