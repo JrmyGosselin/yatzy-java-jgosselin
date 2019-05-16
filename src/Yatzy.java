@@ -100,26 +100,15 @@ public class Yatzy
         int[] dices = new int[] {dice1, dice2, dice3, dice4, dice5};
         int[] counts = getValueOccurrences(dices);
 
-        int pairValue = 0;
-        int tripleValue = 0;
-
         for (int i = 0; i < counts.length; i ++)
         {
-            if (counts[i] == 2)
+            // if we found any dice value with an occurrence other than 0, 2 or 3, this can't be a full house
+            if (counts[i] != 0 && counts[i] != 2 && counts[i] != 3)
             {
-                pairValue = i + 1;
-            }
-            if (counts[i] == 3)
-            {
-                tripleValue = i+1;
+                return 0;
             }
         }
-
-        if (pairValue != 0 && tripleValue != 0)
-        {
-            return pairValue * 2 + tripleValue * 3;
-        }
-        return 0;
+        return getSumOfAllDicesWithValues(dices, 1,2,3,4,5,6);
     }
 
     private static int getSumOfAllDicesWithValues(int[] dices, int... values)
