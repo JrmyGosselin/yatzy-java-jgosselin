@@ -1,5 +1,3 @@
-Kata walkthrough
-
 The given goal is to cleanup/refactor the classes without changing their contracts.
 
 This readme file contains a walkthrough of what I've done to the project.
@@ -7,8 +5,6 @@ This readme file contains a walkthrough of what I've done to the project.
 1 - Harmonizing the programming style
 
 The most obvious (and easy to fix) issue with the Yatzy class and its tests are inconsistencies in coding style.
-
-So I started with this.
 
 To maintain coherence, when I had to choose a style, I picked the style that was the most used within the existing
 codebase. In some cases, I had to make personal choices, which I will justify.
